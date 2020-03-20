@@ -1,1 +1,9 @@
 <p>dashboard works!</p>
+<div *ngIf="usdObj">
+  <p>USD : BTC RATE</p>
+  <!-- <p>Price within the last 15 minutes: {{ usdObj.15m }}</p> -->
+  <p>Last price: {{ usdObj.last }}</p>
+  <p>Last Buy price: {{ usdObj.buy }}</p>
+  <p>Last Sell price: {{ usdObj.sell }}</p>
+  <p>Last Symbol price: {{ usdObj.symbol }}</p>
+</div>
