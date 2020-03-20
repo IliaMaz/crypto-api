@@ -1,9 +1,22 @@
-<p>dashboard works!</p>
+<h2>Latest ExchangeRates</h2>
 <div *ngIf="usdObj">
-  <p>USD : BTC RATE</p>
-  <!-- <p>Price within the last 15 minutes: {{ usdObj.15m }}</p> -->
-  <p>Last price: {{ usdObj.last }}</p>
-  <p>Last Buy price: {{ usdObj.buy }}</p>
-  <p>Last Sell price: {{ usdObj.sell }}</p>
-  <p>Last Symbol price: {{ usdObj.symbol }}</p>
+  <table class="highlight">
+    <thead>
+      <tr>
+        <th>Currency</th>
+        <th>Last price</th>
+        <th>Last Buy price</th>
+        <th>Last Sell price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td *ngIf="usdObj.symbol === '$'">USD</td>
+        <td *ngIf="usdObj.last">{{ usdObj.symbol + usdObj.last }}</td>
+        <td *ngIf="usdObj.buy">{{ usdObj.symbol + usdObj.buy }}</td>
+        <td *ngIf="usdObj.sell">{{ usdObj.symbol + usdObj.sell }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

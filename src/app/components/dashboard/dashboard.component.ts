@@ -9,6 +9,7 @@ import { ApiRequest } from "src/app/model/api-request";
 })
 export class DashboardComponent implements OnInit {
   usdObj;
+
   constructor(private cs: CryptoService) {}
 
   ngOnInit(): void {
