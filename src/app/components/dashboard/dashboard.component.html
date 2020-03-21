@@ -1,5 +1,5 @@
 <h2>Latest ExchangeRates</h2>
-<div *ngIf="usdObj">
+<div *ngIf="objArr">
   <table class="highlight">
     <thead>
       <tr>
@@ -9,13 +9,27 @@
         <th>Last Sell price</th>
       </tr>
     </thead>
-
+    <!-- Testing <== Finished <== Went through a variety of methods, Object.entries was the best variant. -->
+    <!--
+      
+      *ngFor="let item of usdObj | keyvalue"
+      *ngFor="let it of item.value | keyvalue" ! KEYVALUE can be useful
+        {{ item.key }}
+        {{ it.value }}
+      *ngIf="usdObj.USD"
+        {{ usdObj.USD.last }} -->
     <tbody>
-      <tr>
-        <td *ngIf="usdObj.symbol === '$'">USD</td>
-        <td *ngIf="usdObj.last">{{ usdObj.symbol + usdObj.last }}</td>
-        <td *ngIf="usdObj.buy">{{ usdObj.symbol + usdObj.buy }}</td>
-        <td *ngIf="usdObj.sell">{{ usdObj.symbol + usdObj.sell }}</td>
+      <tr *ngFor="let item of objArr">
+        <td>{{ item[0] }}</td>
+        <td>{{ item[1].symbol + " " + item[1].last }}</td>
+        <td>{{ item[1].symbol + " " + item[1].buy }}</td>
+        <td>{{ item[1].symbol + " " + item[1].sell }}</td>
+        <!-- Older code, updated version allows for injection of each currency instead of 1by1 -->
+        <!-- 
+            <td *ngIf="usdObj.symbol === '$'">USD</td>
+            <td *ngIf="usdObj.last">{{ usdObj.symbol + usdObj.last }}</td>
+            <td *ngIf="usdObj.buy">{{ usdObj.symbol + usdObj.buy }}</td>
+            <td *ngIf="usdObj.sell">{{ usdObj.symbol + usdObj.sell }}</td> -->
       </tr>
     </tbody>
   </table>
