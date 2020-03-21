@@ -1,7 +1,16 @@
 ## TODO
 
-## model for single currency object // DONE
+## Model for API request data // DONE
 
-## service && get request // DONE
+## Service && Get request // DONE
 
-## ts file of dashboard looking through the object and taking the data
+## TS file of dashboard: Format API data using Object.entries // DONE
+
+## Visualize data // DONE
+
+## Currency-Details Component
+
+Click on Currency row => Send to curr-details component
+page shows the currency information already shown as list
+&&
+page shows information about exchanges and their rates?
