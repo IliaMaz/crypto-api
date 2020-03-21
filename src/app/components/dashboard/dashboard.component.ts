@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { CryptoService } from "src/app/services/crypto.service";
 import { ApiRequest } from "src/app/model/api-request";
-import { KeyValuePipe } from "@angular/common";
 
 @Component({
   selector: "app-dashboard",
