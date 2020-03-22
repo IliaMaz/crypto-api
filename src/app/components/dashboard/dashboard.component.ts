@@ -9,13 +9,17 @@ import { ApiRequest } from "src/app/model/api-request";
 })
 export class DashboardComponent implements OnInit {
   objArr = [];
-  filtered;
+  exchArr = [];
   constructor(private cs: CryptoService) {}
 
   ngOnInit(): void {
     this.cs.getCryptoExchRate().subscribe((response: ApiRequest) => {
       this.objArr = Object.entries(response);
       // console.log(this.objArr);
+    });
+    this.cs.getMassiveExchDump().subscribe((response: any[]) => {
+      this.exchArr = response;
+      console.log(this.exchArr);
     });
   }
 }

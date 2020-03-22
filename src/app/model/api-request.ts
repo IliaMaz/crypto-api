@@ -35,3 +35,25 @@ export interface SingleCurrency {
   sell: number;
   symbol: string;
 }
+
+export interface KrakenCryptoRates {
+  error: [];
+  result: {
+    XETHZEUR: [SingleKrakenRate];
+    XETHZUSD: [SingleKrakenRate];
+    XXBTZEUR: [SingleKrakenRate];
+    XXBTZUSD: [SingleKrakenRate];
+  };
+}
+
+export interface SingleKrakenRate {
+  a: any[];
+  b: any[];
+  c: any[];
+  v: any[];
+  p: any[];
+  t: any[];
+  l: any[];
+  h: any[];
+  o: any[];
+}

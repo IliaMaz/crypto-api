@@ -13,7 +13,7 @@
 Click on Currency row => Send to curr-details component
 page shows the currency information already shown as list
 
-## Request to bitcoincharts.com API
+## Request to https://api.kraken.com/
 
-http://api.bitcoincharts.com/v1/markets.json
+https://api.kraken.com/
 page shows information about exchanges and their rates?

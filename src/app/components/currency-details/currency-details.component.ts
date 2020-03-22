@@ -1,7 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { CryptoService } from "src/app/services/crypto.service";
 import { ActivatedRoute } from "@angular/router";
-import { FormattedSingleCurrency, ApiRequest } from "src/app/model/api-request";
+import {
+  FormattedSingleCurrency,
+  ApiRequest,
+  KrakenCryptoRates,
+  SingleKrakenRate
+} from "src/app/model/api-request";
 
 @Component({
   selector: "app-currency-details",
@@ -10,7 +15,11 @@ import { FormattedSingleCurrency, ApiRequest } from "src/app/model/api-request";
 })
 export class CurrencyDetailsComponent implements OnInit {
   objArr: any[];
+  exchArr: KrakenCryptoRates;
   singleArr: FormattedSingleCurrency;
+  result: {};
+  XETHZEUR: SingleKrakenRate;
+
   constructor(private cs: CryptoService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -24,6 +33,12 @@ export class CurrencyDetailsComponent implements OnInit {
         // console.log(this.singleArr[1].last);
         // console.log(this.singleArr);
       });
+    });
+    this.cs.getMassiveExchDump().subscribe((response: KrakenCryptoRates) => {
+      this.exchArr = response;
+
+      console.log(this.exchArr);
+      console.log(this.exchArr.result.XXBTZUSD);
     });
   }
 }
