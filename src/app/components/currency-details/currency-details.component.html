@@ -1,0 +1,13 @@
+<p>currency-details works!</p>
+<div class="row">
+  <div class="col s12">
+    <div class="card-panel teal">
+      <span class="white-text" *ngFor="let item of singleArr">
+        <h6 *ngIf="item.length < 4">{{ item }}</h6>
+      </span>
+      <p class="white-text" *ngIf="singleArr">
+        {{ singleArr[1].last }}
+      </p>
+    </div>
+  </div>
+</div>

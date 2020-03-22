@@ -8,14 +8,14 @@ import { ApiRequest } from "src/app/model/api-request";
   styleUrls: ["./dashboard.component.css"]
 })
 export class DashboardComponent implements OnInit {
-  // usdObj;
   objArr = [];
+  filtered;
   constructor(private cs: CryptoService) {}
 
   ngOnInit(): void {
     this.cs.getCryptoExchRate().subscribe((response: ApiRequest) => {
       this.objArr = Object.entries(response);
-      console.log(this.objArr);
+      // console.log(this.objArr);
     });
   }
 }

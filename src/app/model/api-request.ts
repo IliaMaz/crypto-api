@@ -23,6 +23,11 @@ export interface ApiRequest {
   TRY: [SingleCurrency];
 }
 
+export interface FormattedSingleCurrency {
+  currency: string;
+  object: [SingleCurrency];
+}
+
 export interface SingleCurrency {
   "15m": number;
   last: number;
