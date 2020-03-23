@@ -11,10 +11,11 @@
       </span>
     </div>
   </div>
-  <div class="col s12 m4" *ngIf="exchArr.result.XETHZEUR">
+  <div class="col s12 m4" *ngIf="exchArr.result">
     <div class="card-panel teal">
       <h5 class="white-text">KRAKEN</h5>
       <span class="white-text">
+        <!--.a[0],.b[0],.c[0]  -->
         <h6>Last asking: {{ exchArr.result.XXBTZUSD.a[0] }}</h6>
         <h6>Last bid: {{ exchArr.result.XXBTZUSD.b[0] }}</h6>
         <h6>Last trade: {{ exchArr.result.XXBTZUSD.c[0] }}</h6>

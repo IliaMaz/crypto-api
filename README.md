@@ -17,3 +17,7 @@ page shows the currency information already shown as list
 
 https://api.kraken.com/
 page shows information about exchanges and their rates?
+
+## Request to bitcoincharts for the massiveExchDump
+
+Do pulls as was planned before and format results
